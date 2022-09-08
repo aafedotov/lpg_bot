@@ -1,3 +1,5 @@
+#!/home/aafedotov/lpg_bot/lpg_bot/venv/bin/python3
+
 import os
 
 from telegram import Bot
