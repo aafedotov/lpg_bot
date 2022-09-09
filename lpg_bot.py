@@ -34,21 +34,26 @@ def add_lpg(update, context):
     context.bot.send_message(chat_id=chat.id,
                              text='Введите цену пропана')
     price = None
-    while not price:
-        try:
-            price = float(update.message.text)
-        except Exception:
-            context.bot.send_message(chat_id=chat.id,
-                                     text='Некорректный ввод.')
+    while True:
+        if price:
+            try:
+                price = float(update.message.text)
+                break
+            except Exception:
+                context.bot.send_message(chat_id=chat.id,
+                                         text='Некорректный ввод.')
     context.bot.send_message(chat_id=chat.id,
                              text='Введите количество литров')
     value = None
-    while not price:
-        try:
-            value = float(update.message.text)
-        except Exception:
-            context.bot.send_message(chat_id=chat.id,
-                                     text='Некорректный ввод.')
+    while True:
+        if value:
+            try:
+                value = float(update.message.text)
+                break
+            except Exception:
+                context.bot.send_message(chat_id=chat.id,
+                                         text='Некорректный ввод.')
+
     context.bot.send_message(chat_id=chat.id,
                              text=f'Вы ввели:{price} {value}')
 
