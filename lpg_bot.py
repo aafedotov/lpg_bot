@@ -23,11 +23,10 @@ def say_hi(update, context):
 
 def wake_up(update, context):
     chat = update.effective_chat
-    context.bot.send_message(chat_id=chat.id,
-                             text='Спасибо, что включили меня')
     button = ReplyKeyboardMarkup([['/add_lpg']], resize_keyboard=True)
     context.bot.send_message(chat_id=chat.id,
-                             text='Спасибо, данные отправлены')
+                             text='Спасибо, что включили меня',
+                             reply_markup=button)
 
 
 def add_lpg(update, context):
