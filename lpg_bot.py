@@ -17,7 +17,9 @@ chat_id = os.getenv('CHAT_ID')
 def say_hi(update, context):
     chat = update.effective_chat
     print(update)
-    to_send = update.get('message').get('text')
+    print(type(update))
+    to_send = 'test'
+    # to_send = update.get('message').get('text')
     text = 'Привет, я Бот! ' + to_send
     context.bot.send_message(chat_id=chat.id, text=text)
 
